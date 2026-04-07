@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sregor Investment Group</title>
+  <meta name="description" content="Sregor Investment Group acquires and develops disciplined real estate investments focused on long-term cash flow, durability, and legacy." />
+  <style>
+    :root{
+      --bg:#f6f3ed;
+      --paper:#fbf8f3;
+      --ink:#1e241d;
+      --muted:#5d665b;
+      --line:#d8d1c6;
+      --brand:#556b2f;
+      --brand-dark:#445526;
+      --accent:#8b7d5f;
+      --shadow:0 16px 40px rgba(20,24,19,.08);
+      --radius:22px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(85,107,47,.08), transparent 28%),
+        linear-gradient(180deg, #f9f7f2 0%, var(--bg) 100%);
+      line-height:1.55;
+    }
+    h1,h2,h3,.serif{
+      font-family: Georgia, "Times New Roman", serif;
+      letter-spacing:.01em;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+    .nav{
+      position:sticky;top:0;z-index:20;
+      backdrop-filter: blur(14px);
+      background:rgba(251,248,243,.75);
+      border-bottom:1px solid rgba(216,209,198,.7);
+    }
+    .nav-inner{
+      max-width:var(--max);margin:0 auto;padding:16px 24px;
+      display:flex;align-items:center;justify-content:space-between;gap:20px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:14px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+      font-size:.9rem;
+    }
+    .monogram{
+      width:42px;height:42px;border-radius:50%;
+      display:grid;place-items:center;
+      border:1px solid var(--brand);
+      color:var(--brand);
+      background:rgba(85,107,47,.06);
+      font-family: Georgia, serif;
+      font-size:1.05rem;
+    }
+    .nav-links{
+      display:flex;gap:24px;align-items:center;color:var(--muted);font-size:.96rem;
+    }
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:14px 20px;border-radius:999px;border:1px solid var(--brand);
+      background:var(--brand);color:#fff;font-weight:600;
+      transition:.2s ease; box-shadow:var(--shadow);
+    }
+    .btn:hover{background:var(--brand-dark);border-color:var(--brand-dark);transform:translateY(-1px)}
+    .btn.secondary{
+      background:transparent;color:var(--brand);box-shadow:none
+    }
+    .hero{padding:76px 0 48px}
+    .hero-grid{
+      display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:stretch;
+    }
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:10px;
+      color:var(--brand);font-size:.84rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+      margin-bottom:16px;
+    }
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--brand)}
+    h1{
+      font-size:clamp(2.8rem, 6vw, 5.2rem);
+      line-height:.94;margin:0 0 18px;
+      max-width:10.5ch;
+    }
+    .hero-copy{
+      font-size:1.08rem;color:var(--muted);max-width:650px;margin-bottom:28px;
+    }
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+    .stats{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px;
+    }
+    .stat{
+      padding:18px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.52)
+    }
+    .stat strong{display:block;font-size:1.2rem;font-family:Georgia, serif;margin-bottom:4px}
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.72), rgba(255,255,255,.9));
+      border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);
+    }
+    .hero-card{padding:28px;display:flex;flex-direction:column;justify-content:space-between}
+    .hero-card-top{
+      padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:18px;
+    }
+    .quote{
+      font-family:Georgia, serif;font-size:1.5rem;line-height:1.25;margin:0 0 10px;
+    }
+    .muted{color:var(--muted)}
+    .pill-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+    .pill{
+      border:1px solid var(--line);padding:10px 14px;border-radius:999px;background:var(--paper);font-size:.92rem;color:var(--muted)
+    }
+    section{padding:32px 0}
+    .section-head{
+      display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:22px;
+    }
+    .section-head h2{font-size:2.1rem;margin:0}
+    .section-head p{max-width:650px;color:var(--muted);margin:0}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .info-card{padding:24px}
+    .info-card h3{margin:0 0 10px;font-size:1.28rem}
+    .info-card p{margin:0;color:var(--muted)}
+    .about-grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:18px
+    }
+    .about-card{padding:28px}
+    .list{margin:14px 0 0;padding:0;list-style:none}
+    .list li{padding:10px 0;border-bottom:1px solid rgba(216,209,198,.7)}
+    .list li:last-child{border-bottom:none}
+    .cta{
+      margin:34px 0 56px;padding:34px;
+      display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center
+    }
+    .cta h2{font-size:2.2rem;margin:0 0 12px}
+    .contact-box{
+      padding:22px;border-radius:18px;background:rgba(85,107,47,.05);border:1px solid rgba(85,107,47,.18)
+    }
+    .contact-box .label{
+      font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);font-weight:700
+    }
+    .contact-email{
+      font-size:1.2rem;font-weight:700;margin:8px 0 10px;word-break:break-word
+    }
+    footer{
+      border-top:1px solid var(--line);
+      padding:28px 0 40px;color:var(--muted);font-size:.94rem
+    }
+
+    @media (max-width: 960px){
+      .hero-grid,.about-grid,.cta,.grid-3{grid-template-columns:1fr}
+      .section-head{flex-direction:column;align-items:start}
+      .stats{grid-template-columns:1fr}
+      .nav-links{display:none}
+      .hero{padding-top:48px}
+      h1{max-width:none}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="brand">
+        <span class="monogram">SI</span>
+        <span>Sregor Investment Group</span>
+      </a>
+      <div class="nav-links">
+        <a href="#focus">Focus</a>
+        <a href="#about">About</a>
+        <a href="#criteria">Criteria</a>
+        <a href="#contact" class="btn secondary">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> disciplined real estate ownership</div>
+          <h1>Built for My Family. Structured for Generations.</h1>
+          <p class="hero-copy">
+            Sregor Investment Group acquires, develops, and operates real estate with a long-term ownership mindset.
+            The focus is simple: durable assets, disciplined underwriting, and decisions that create both cash flow and freedom.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#contact">Start a Conversation</a>
+            <a class="btn secondary" href="#about">Learn More</a>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <strong>Long-Term</strong>
+              <span class="muted">Built around hold strategy, not hype.</span>
+            </div>
+            <div class="stat">
+              <strong>Operator-Led</strong>
+              <span class="muted">Execution-minded with construction and project delivery discipline.</span>
+            </div>
+            <div class="stat">
+              <strong>Legacy Focused</strong>
+              <span class="muted">Structured to serve family, time freedom, and generational value.</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card hero-card">
+          <div class="hero-card-top">
+            <p class="quote">“Substance over speculation.”</p>
+            <p class="muted">
+              Every deal is evaluated through risk control, cash flow durability, and operational clarity.
+            </p>
+          </div>
+          <div>
+            <div class="muted" style="font-size:.9rem; text-transform:uppercase; letter-spacing:.12em; font-weight:700;">Investment Focus</div>
+            <div class="pill-row">
+              <span class="pill">Residential Rentals</span>
+              <span class="pill">Value-Add Opportunities</span>
+              <span class="pill">Outdoor Hospitality</span>
+              <span class="pill">Selective Development</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="focus">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>What Sregor Focuses On</h2>
+          <p>
+            Sregor is built around practical real estate opportunities where disciplined execution can create durable value.
+            The emphasis is on assets that can be improved, operated well, and held with intention.
+          </p>
+        </div>
+        <div class="grid-3">
+          <div class="card info-card">
+            <h3>Acquisition</h3>
+            <p>Targeting opportunities where basis, structure, and downside protection matter as much as upside.</p>
+          </div>
+          <div class="card info-card">
+            <h3>Operational Improvement</h3>
+            <p>Applying builder-level planning, budgeting, and process control to drive stronger performance after close.</p>
+          </div>
+          <div class="card info-card">
+            <h3>Long-Term Ownership</h3>
+            <p>Prioritizing cash flow, resilience, and legacy over short-term noise or speculative deal chasing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Built by an Operator</h2>
+          <p>
+            Sregor reflects a builder’s mindset: clear scope, controlled risk, disciplined execution, and long-term accountability.
+            That approach informs how opportunities are screened, planned, and managed.
+          </p>
+        </div>
+        <div class="about-grid">
+          <div class="card about-card">
+            <h3>How We Think</h3>
+            <ul class="list">
+              <li>Underwrite conservatively.</li>
+              <li>Respect construction realities, not just pro forma optimism.</li>
+              <li>Favor durable assets over trend-driven plays.</li>
+              <li>Make decisions that buy back time, not just produce activity.</li>
+            </ul>
+          </div>
+          <div class="card about-card">
+            <h3>Why It Exists</h3>
+            <p class="muted">
+              Sregor was built around a personal conviction: ownership should create freedom, presence, and stability.
+              The objective is not simply to accumulate deals. It is to build something enduring and well-run.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="criteria">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Investment Criteria</h2>
+          <p>
+            The current focus is on opportunities where strong basis, manageable execution, and long-term performance align.
+          </p>
+        </div>
+        <div class="grid-3">
+          <div class="card info-card">
+            <h3>Durable Demand</h3>
+            <p>Markets and product types with practical staying power, not temporary excitement.</p>
+          </div>
+          <div class="card info-card">
+            <h3>Execution Edge</h3>
+            <p>Deals where planning, construction knowledge, and operational discipline can materially improve outcomes.</p>
+          </div>
+          <div class="card info-card">
+            <h3>Cash Flow Orientation</h3>
+            <p>Opportunities should support a clear path to healthy economics and defensible long-term ownership.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="card cta" id="contact">
+          <div>
+            <div class="eyebrow"><span class="dot"></span> contact</div>
+            <h2>Let’s discuss the next opportunity.</h2>
+            <p class="muted">
+              For acquisitions, partnerships, land opportunities, or general inquiries, reach out directly and start the conversation.
+            </p>
+          </div>
+          <div class="contact-box">
+            <div class="label">Email</div>
+            <div class="contact-email"><a href="mailto:info@sregorinvestments.com">info@sregorinvestments.com</a></div>
+            <p class="muted" style="margin:0 0 14px;">Direct outreach is the best place to start.</p>
+            <a class="btn" href="mailto:info@sregorinvestments.com">Email Sregor</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+        <span>© <span id="year"></span> Sregor Investment Group. All rights reserved.</span>
+        <span>Built with long-term intent.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
